@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinAssignment" x:Class="XamarinAssignment.MainPage">
+    
+    
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            
+            <Style TargetType="Image">
+                 <Setter Property="HeightRequest" Value="30"/>
+                 <Setter Property="WidthRequest" Value="30"/>
+                 <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            
+             <Style TargetType="Label">
+                 <Setter Property="FontAttributes" Value="Bold"/>
+                 <Setter Property="Margin" Value="10,0,0,0"/>
+                 <Setter Property="VerticalOptions" Value="Center"/>
+                 <Setter Property="TextColor" Value="{StaticResource ColorNavyBlue}"/>
+            </Style>
+            
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    
+    <StackLayout Orientation="Vertical" >
+       
+        <Frame VerticalOptions="EndAndExpand" 
+               Margin="20" Padding="3">
+            
+            
+            <StackLayout Orientation="Vertical">
+                
+                <!--Camera-->
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Padding="10,10,10,5">
+                
+                      <Image Source="camera.png" />
+                   
+                      <Label Text="Camera"  />
+                       
+                </StackLayout>  
+                
+                <BoxView Color="{StaticResource ColorGray}" HeightRequest="1" />
+                
+                <!--Gallery-->
+                <StackLayout Orientation="Horizontal" Padding="10,5,10,10">
+                
+                     <Image Source="gallery.png" />
+                       
+                     <Label Text="Gallery"  />
+                    
+                </StackLayout>  
+                
+            </StackLayout>    
+            
+        </Frame>     
+        
+    </StackLayout>
+    
+    
+</ContentPage>

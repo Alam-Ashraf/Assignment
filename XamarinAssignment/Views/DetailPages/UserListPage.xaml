@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinAssignment.Views.DetailPages.UserListPage"
+             xmlns:image="clr-namespace:XamarinAssignment.Renderers"
+             BackgroundColor="{StaticResource ColorSilver}"
+             Title="User List"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true">
+    
+       <StackLayout Spacing="0"> 
+       
+            <ListView x:Name="UserListView"  
+                ItemsSource="{Binding UserList}"
+                SeparatorVisibility="None"
+                RowHeight="100">  
+            
+                <ListView.ItemTemplate> 
+                
+                    <DataTemplate>  
+                    
+                     <ViewCell>
+                        
+                        <Frame BackgroundColor="{StaticResource ColorWhite}" CornerRadius="0" Margin="5" Padding="5">
+            
+                              <StackLayout Orientation="Horizontal" Padding="0">
+                            
+                                  <image:RoundImage Source="{Binding image}" 
+                                         HeightRequest="55"
+                                         WidthRequest="55"
+                                         Aspect="AspectFill"
+                                         HorizontalOptions="Start"
+                                         VerticalOptions="Center"
+                                         />
+                                  
+                                  <StackLayout VerticalOptions="Center">
+                                
+                                       <Label Text="{Binding name}" 
+                                              LineBreakMode="TailTruncation" 
+                                              TextColor="{StaticResource ColorNavyBlue}"
+                                              FontSize="{StaticResource Font18}"/>
+                                
+                                       <Label Text="{Binding email}" FontSize="{StaticResource Font16}"/>
+                                     
+                                  </StackLayout>
+                            
+                              </StackLayout>
+            
+                          </Frame>
+                      </ViewCell>
+                    </DataTemplate>  
+                </ListView.ItemTemplate>  
+            
+               <!-- <x:Arguments>
+                    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                </x:Arguments>
+            -->
+            </ListView>  
+        
+        </StackLayout>  
+    
+   
+</ContentPage>

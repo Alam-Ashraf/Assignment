@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                 x:Class="XamarinAssignment.Popups.ChooseImageFromPopUpView"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 BackgroundColor="{StaticResource ColorTransparent}"
+                 >
+    
+   <pages:PopupPage.Resources>
+        
+        <ResourceDictionary>
+            
+            <Style TargetType="Image">
+                 <Setter Property="HeightRequest" Value="30"/>
+                 <Setter Property="WidthRequest" Value="30"/>
+                 <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            
+             <Style TargetType="Label">
+                 <Setter Property="FontAttributes" Value="Bold"/>
+                 <Setter Property="Margin" Value="10,0,0,0"/>
+                 <Setter Property="VerticalOptions" Value="Center"/>
+                 <Setter Property="TextColor" Value="{StaticResource ColorNavyBlue}"/>
+            </Style>
+            
+        </ResourceDictionary>
+        
+    </pages:PopupPage.Resources>
+    
+  <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+          PositionIn="Bottom"
+          PositionOut="Bottom"
+          ScaleIn="1"
+          ScaleOut="1"
+          DurationIn="500"
+          DurationOut="500"
+          />
+  </pages:PopupPage.Animation>
+    
+    <StackLayout Orientation="Vertical"  >
+       
+        <Frame VerticalOptions="EndAndExpand" 
+               Margin="20" Padding="3">
+            
+            
+            <StackLayout Orientation="Vertical">
+                
+                <!--Camera-->
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Padding="10,10,10,5">
+                
+                      <Image Source="camera.png" />
+                   
+                      <Label Text="Camera"  />
+                       
+                    
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CameraCommand}"/>
+                   </StackLayout.GestureRecognizers>
+                    
+             </StackLayout>  
+                
+                <BoxView Color="{StaticResource ColorGray}" HeightRequest="1" />
+                
+                <!--Gallery-->
+                <StackLayout Orientation="Horizontal" Padding="10,5,10,10">
+                
+                     <Image Source="gallery.png" />
+                       
+                     <Label Text="Gallery"  />
+                    
+                   <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GalleryCommand}"/>
+                   </StackLayout.GestureRecognizers>
+                    
+                </StackLayout>  
+                
+            </StackLayout>    
+            
+        </Frame>     
+        
+         <StackLayout.GestureRecognizers>
+                 <TapGestureRecognizer Command="{Binding BackgroundCommand}"/>
+         </StackLayout.GestureRecognizers>
+        
+        
+    </StackLayout>  
+    
+</pages:PopupPage>

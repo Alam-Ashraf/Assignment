@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinAssignment.Views.MasterPages.MasterOptionPage"
+             Icon="hamburger.png"
+             Title="Master Page"
+             BackgroundColor="{StaticResource ColorSilver}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             >
+    
+    
+    <StackLayout Orientation="Vertical" Margin="10,10,10,0">
+        
+        
+        <Image Source="user.png" HeightRequest="100" WidthRequest="100" />
+        
+        <Label Text="User List" HeightRequest="30" HorizontalOptions="FillAndExpand" FontSize="{StaticResource Font18}" Margin="0,10,0,0" TextColor="{StaticResource ColorNavyBlue}">
+             <Label.GestureRecognizers>
+                   <TapGestureRecognizer Command="{Binding UserListCommand}"/>
+             </Label.GestureRecognizers>
+        </Label>
+        
+        <BoxView BackgroundColor="{StaticResource ColorNavyBlue}" Margin="0,-8,0,0" HeightRequest="1"/>
+        
+        <Label Text="Add User" HeightRequest="30"  HorizontalOptions="FillAndExpand" FontSize="{StaticResource Font18}" TextColor="{StaticResource ColorNavyBlue}" >
+            <Label.GestureRecognizers>
+                   <TapGestureRecognizer Command="{Binding AddUserCommand}"/>
+             </Label.GestureRecognizers>
+        </Label>
+        
+        <BoxView BackgroundColor="{StaticResource ColorNavyBlue}" Margin="0,-8,0,0" HeightRequest="1"/>
+        
+         <Label Text="Go to NativePage" HeightRequest="30" HorizontalOptions="FillAndExpand" FontSize="{StaticResource Font18}" TextColor="{StaticResource ColorNavyBlue}" >
+            <Label.GestureRecognizers>
+                   <TapGestureRecognizer Command="{Binding NativeCommand}"/>
+             </Label.GestureRecognizers>
+        </Label>
+        
+        <BoxView BackgroundColor="{StaticResource ColorNavyBlue}" Margin="0,-8,0,0" HeightRequest="1"/>
+        
+        
+    </StackLayout>
+    
+    
+</ContentPage>

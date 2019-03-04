@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinAssignment.Views.DetailPages.UserDetailPage"
+             BackgroundColor="{StaticResource ColorSilver}"
+             xmlns:image="clr-namespace:XamarinAssignment.Renderers"
+             Title="User Confirmation"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true">
+    
+    
+      <ContentPage.Resources>
+          <ResourceDictionary> 
+            
+             <Style TargetType="Label">
+                 <Setter Property="FontSize" Value="{StaticResource Font16}"/>
+                 <Setter Property="Margin" Value="5,5,5,0"/>
+                 <Setter Property="TextColor" Value="{StaticResource ColorNavyBlue}"/>
+            </Style>
+            
+            <Style TargetType="Entry">
+                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                 <Setter Property="TextColor" Value="{StaticResource ColorNavyBlue}"/>
+                 <Setter Property="Margin" Value="5,-10,5,0"/>
+                 <Setter Property="FontSize" Value="{StaticResource Font14}"/>
+            </Style>
+                   
+             <Style TargetType="BoxView">
+                 <Setter Property="HeightRequest" Value="1"/>
+                 <Setter Property="Margin" Value="5,-5,5,0"/>
+                 <Setter Property="BackgroundColor" Value="{StaticResource ColorGray}"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+   <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource ColorSilver}">
+        
+    <Frame HorizontalOptions="FillAndExpand" 
+           Margin="20,20,20,20" 
+           HasShadow="true" Padding="2">
+        
+    <ScrollView VerticalScrollBarVisibility="Never">
+            
+     <StackLayout Orientation="Vertical" >
+        
+         
+        <!--<image:RoundImage-->
+        <image:RoundImage
+             Source="{Binding PickedImageSource}"
+             HeightRequest="100"
+             WidthRequest="100"
+             Aspect="AspectFill"
+             HorizontalOptions="Center"
+             Margin="0,10,0,0"
+             BorderColor="{Binding ImageBoarderColor}"
+             BorderThickness="2"
+             />
+              
+        
+                <!--Name-->
+                <Label Text="Name"/>
+
+                <Label x:Name="EntryName"
+                       Text="{Binding Name}"
+                       TextColor="{Binding ColorGray}"
+                       />
+
+                <BoxView />
+
+                <!--Email-->  
+                <Label Text="Email" />
+
+                <Label x:Name="EntryEmail"
+                       Text="{Binding Email}"
+                       TextColor="{Binding ColorGray}"
+                       />
+                  
+                <BoxView />
+                
+                <!--Phone-->
+                <Label Text="Phone"  />
+
+                <Label x:Name="EntryPhone"
+                       Text="{Binding Phone}"
+                       TextColor="{Binding ColorGray}"/>
+                    
+                   
+                <BoxView />
+                
+                <!--Nationality-->
+                <Label Text="Nationality"  />
+                
+                <Label Text="{Binding SelectedNationality}" TextColor="{Binding ColorGray}" FontSize="{StaticResource Font14}"/>
+                           
+                <BoxView />
+                
+                
+                <!--DOB-->
+                <Label Text="Date of Birth"  />
+                
+                <Label Text="{Binding SelectedDateInString}" TextColor="{Binding ColorGray}" FontSize="{StaticResource Font14}"/>
+
+                <BoxView />
+                
+                
+                <!--Marital status-->
+                <Label Text="Marital Status"  />
+
+                <Label Text="{Binding SelectedMaritalStatus}" TextColor="{Binding ColorGray}" FontSize="{StaticResource Font14}"/>
+
+                <BoxView />
+        
+                    
+                <!--Sex-->
+                <Label Text="Sex"  />
+               
+                <Label Text="{Binding SelectedSex}" TextColor="{Binding ColorGray}" FontSize="{StaticResource Font14}"/>
+
+                <BoxView />
+        
+        
+     </StackLayout>
+        
+   </ScrollView>
+            
+   </Frame>
+        
+        <Button Text="Add To List" Margin="20" VerticalOptions="EndAndExpand"
+                BackgroundColor="{StaticResource ColorNavyBlue}"
+                TextColor="{StaticResource ColorWhite}" 
+                Command="{Binding AddToListCommand}"/>
+        
+ </StackLayout>
+    
+</ContentPage>
+

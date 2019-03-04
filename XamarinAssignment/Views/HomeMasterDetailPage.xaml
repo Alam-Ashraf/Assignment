@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="XamarinAssignment.Views.HomeMasterDetailPage"
+                  xmlns:master="clr-namespace:XamarinAssignment.Views.MasterPages"
+                  xmlns:detail="clr-namespace:XamarinAssignment.Views.DetailPages"
+                  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+                  ios:Page.UseSafeArea="true"
+                  >
+    
+     <!--Master Page-->
+    <MasterDetailPage.Master>
+        <master:MasterOptionPage x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+    
+    <!--Detail Page-->
+    <MasterDetailPage.Detail >
+        <NavigationPage>
+            <x:Arguments>
+                <detail:UserListPage x:Name="DetailPage"/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
